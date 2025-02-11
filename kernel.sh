@@ -7,7 +7,7 @@ dnf install -y \
     kernel-devel \
     kernel-headers \
     dkms xorg-x11-proto-devel\
-    vulkan \
+    vulkan libglvnd libglvnd-devel libglvnd-egl\
     vulkan-tools \
     vulkan-headers \
     vulkan-loader-devel
