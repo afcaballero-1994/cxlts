@@ -32,6 +32,8 @@ mv /usr/local /var/usrlocal && \
 
 /tmp/kernel.sh
 
+#cleanup
+shopt -s extglob
 rm -rf /var/roothome
 rm -rf /var/!(cache)
 rm -rf /var/cache/!(rpm-ostree)
