@@ -9,16 +9,34 @@ set -ouex pipefail
 # List of rpmfusion packages can be found here:
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
+
+#https://docs.fedoraproject.org/en-US/bootc/home-directories/
+mkdir -p -m 0700 /var/roothome
+
 # this installs a package from fedora repos
-dnf install -y tmux 
 
-# Use a COPR Example:
-#
-# dnf5 -y copr enable ublue-os/staging
-# dnf5 -y install package
-# Disable COPRs so they don't end up enabled on the final image:
-# dnf5 -y copr disable ublue-os/staging
+/tmp/repos.sh
+/tmp/flatpak.sh
+/tmp/packages.sh
 
-#### Example for enabling a System Unit File
+sed -i 's,ExecStart=/usr/bin/bootc update --apply --quiet,ExecStart=/usr/bin/bootc update --quiet,g' \
+    /usr/lib/systemd/system/bootc-fetch-apply-updates.service
 
-systemctl enable podman.socket
+
+mv /opt /var/opt && \
+  ln -s /var/opt /opt
+
+
+mv /usr/local /var/usrlocal && \
+  ln -s /var/usrlocal /usr/local
+
+/tmp/kernel.sh
+
+rm -rf /var/roothome
+rm -rf /var/!(cache)
+rm -rf /var/cache/!(rpm-ostree)
+rm -rf /var/tmp
+dnf clean all
+
+systemctl disable rpm-ostree-countme.service
+
