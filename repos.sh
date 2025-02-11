@@ -4,12 +4,8 @@ set -ouex pipefail
 
 dnf update -y
 
-rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
-rpm --import https://www.elrepo.org/RPM-GPG-KEY-v2-elrepo.org
-
-dnf install epel-release -y
-
 dnf config-manager --set-enabled crb -y
+dnf install epel-release epel-next-release -y
 
 
 dnf install distribution-gpg-keys -y
