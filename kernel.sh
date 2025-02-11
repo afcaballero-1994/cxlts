@@ -3,10 +3,10 @@
 set -ouex pipefail
 
 dnf install -y \
-    wget \
+    wget pkgconf-pkg-config libstdc++\
     kernel-devel \
     kernel-headers \
-    dkms \
+    dkms xorg-x11-proto-devel\
     vulkan \
     vulkan-tools \
     vulkan-headers \
