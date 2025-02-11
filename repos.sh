@@ -4,7 +4,7 @@ set -ouex pipefail
 
 dnf update -y
 
-dnf install epel-release epel-next-release -y
+dnf install epel-release -y
 dnf config-manager --set-enabled crb -y
 
 
