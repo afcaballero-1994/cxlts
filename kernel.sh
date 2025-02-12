@@ -33,11 +33,13 @@ chmod +x NVIDIA-Linux-x86_64-570.86.16.run
 
 
 
-./NVIDIA-Linux-x86_64-570.86.16.run\
+/NVIDIA-Linux-x86_64-570.86.16.run\
     --silent --run-nvidia-xconfig --dkms \
     --kernel-source-path /usr/src/kernels/$kver \
-    --kernel-module-type=proprietary
+    --kernel-module-type=proprietary \
+    --kernel-name=$kver
 
+rm -f /NVIDIA-Linux-x86_64-570.86.16.run
 dracut -f --kver=$kver
 
 #dracut -vf /usr/lib/modules/$kver/initramfs.img $kver
