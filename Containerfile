@@ -1,4 +1,4 @@
-FROM quay.io/almalinuxorg/almalinux-bootc:10-kitten
+FROM ghcr.io/afcaballero-1994/cltx-base-nvidia:latest
 #FROM quay.io/centos-bootc/centos-bootc:stream10
 
 ## Other possible base images include:
@@ -24,7 +24,7 @@ RUN ls /tmp
 
 COPY system_files /
 
-RUN ln -s /run /var/run
+#RUN ln -s /run /var/run
 
 RUN mkdir -p /var/lib/alternatives && \
     /tmp/build.sh && \

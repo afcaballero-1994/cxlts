@@ -20,8 +20,6 @@ mv /opt /var/opt && \
 mv /usr/local /var/usrlocal && \
   ln -s /var/usrlocal /usr/local
 
-/tmp/kernel.sh
-
 #cleanup
 shopt -s extglob
 rm -rf /var/roothome

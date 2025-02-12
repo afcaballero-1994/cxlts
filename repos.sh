@@ -4,11 +4,6 @@ set -ouex pipefail
 
 dnf update -y
 
-dnf install epel-release -y
-dnf config-manager --set-enabled crb -y
-
-
-
 dnf install distribution-gpg-keys -y
 
 #wait rpm fusion to be available for 10 release
