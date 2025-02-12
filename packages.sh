@@ -2,5 +2,5 @@
 
 set -ouex pipefail
 
-dnf install -y i3 fuse selinux-policy git distrobox sddm neovim emacs
+dnf install -y i3wm fuse selinux-policy git distrobox sddm neovim emacs
 systemctl enable sddm.service
