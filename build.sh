@@ -23,10 +23,8 @@ mv /usr/local /var/usrlocal && \
 #cleanup
 shopt -s extglob
 rm -rf /var/roothome
-rm -rf /var/!(cache)
-rm -rf /var/cache/!(rpm-ostree)
+rm -rf /var/run
 rm -rf /var/tmp
+rm -rf /var/cache/!(rpm-ostree)
 dnf clean all
-
-systemctl disable rpm-ostree-countme.service
 
