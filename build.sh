@@ -23,7 +23,6 @@ mv /usr/local /var/usrlocal && \
 #cleanup
 shopt -s extglob
 rm -rf /var/roothome
-rm -rf /var/run
 rm -rf /var/tmp
 rm -rf /var/cache/!(rpm-ostree)
 dnf clean all
