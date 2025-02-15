@@ -24,7 +24,7 @@ RUN ls /tmp
 
 COPY system_files /
 
-#RUN ln -s /run /var/run
+RUN ln -s /run /var/run
 
 RUN mkdir -p /var/lib/alternatives && \
     /tmp/build.sh && \
