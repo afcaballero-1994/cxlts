@@ -13,13 +13,6 @@ sed -i 's,ExecStart=/usr/bin/bootc update --apply --quiet,ExecStart=/usr/bin/boo
     /usr/lib/systemd/system/bootc-fetch-apply-updates.service
 
 
-mv /opt /var/opt && \
-  ln -s /var/opt /opt
-
-
-mv /usr/local /var/usrlocal && \
-  ln -s /var/usrlocal /usr/local
-
 #cleanup
 shopt -s extglob
 rm -rf /var/roothome
