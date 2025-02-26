@@ -24,12 +24,13 @@ RUN ls /tmp
 
 COPY system_files /
 
-RUN ln -s /run /var/run
+#RUN ln -s /run /var/run
 
 RUN mkdir -p /var/lib/alternatives && \
-    /tmp/build.sh && \
-    ostree container commit
+    /tmp/build.sh &&
 
 RUN ls /usr/lib/modules
+
+RUN rm -rf /var/log/*
 
 RUN bootc container lint
