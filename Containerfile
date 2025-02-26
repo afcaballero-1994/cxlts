@@ -27,7 +27,7 @@ COPY system_files /
 #RUN ln -s /run /var/run
 
 RUN mkdir -p /var/lib/alternatives && \
-    /tmp/build.sh &&
+    /tmp/build.sh
 
 RUN ls /usr/lib/modules
 
